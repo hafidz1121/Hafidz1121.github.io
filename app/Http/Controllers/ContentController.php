@@ -17,4 +17,11 @@ class ContentController extends Controller
             'desc' => $desc
         ]);
     }
+
+    public function requestData($nama) {
+        return view('index', 
+        [
+            'nama' => $nama
+        ]);
+    }
 }

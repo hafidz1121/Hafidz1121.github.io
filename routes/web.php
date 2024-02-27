@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/parsing_data', [ContentController::class, 'index']);
+Route::get('/request_data/{nama}', [ContentController::class, 'requestData']);

@@ -14,7 +14,7 @@
                                 printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                 dummy text ever since." }}</p>
                             <div class="button wow fadeInUp" data-wow-delay=".7s">
-                                <a href="about-us.html" class="btn">Discover More</a>
+                                <a href="about-us.html" class="btn">{{ $nama ?? 'Discover More' }}</a>
                             </div>
                         </div>
                     </div>
