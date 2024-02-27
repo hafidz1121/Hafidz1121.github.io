@@ -1,0 +1,12 @@
+@extends('layouts.masterpage')
+@section('content')
+    @include('pages.home')
+    @include('pages.about')
+    @include('pages.service')
+    @include('pages.pricing')
+    @include('pages.video')
+    @include('pages.banner')
+    @include('pages.news')
+    @include('pages.subscribe')
+    @include('pages.brand')
+@endsection
