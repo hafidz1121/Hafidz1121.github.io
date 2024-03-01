@@ -1,5 +1,5 @@
 <!-- Start Latest News Area -->
-<div class="latest-news-area section">
+<div class="latest-news-area section" id="blog">
     <div class="container">
         <div class="row">
             <div class="col-12">

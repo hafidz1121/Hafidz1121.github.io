@@ -1,5 +1,5 @@
 <!-- Start Hero Area -->
-<section class="hero-area">
+<section class="hero-area" id="home">
     <!-- Single Slider -->
     <div class="hero-inner">
         <div class="container">

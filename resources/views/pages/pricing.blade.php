@@ -1,5 +1,5 @@
 <!-- Start Pricing Table Area -->
-<section class="pricing-table section">
+<section class="pricing-table section" id="pricing">
     <div class="container">
         <div class="row">
             <div class="col-12">

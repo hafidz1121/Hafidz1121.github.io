@@ -18,19 +18,25 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="active" href="index.html">Home</a></li>
+                                    <a class="" href="#home">Home</a></li>
                                 <li class="nav-item">
-                                    <a href="about-us.html">About Us</a>
+                                    <a href="#about">About Us</a>
                                 </li>
-                                <li class="nav-item"><a href="#">Services</a></li>
-                                <li class="nav-item"><a href="#">Portfolio</a> </li>
-                                <li class="nav-item"><a href="#">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="404.html">404 Error</a></li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a href="#services">Services</a>
                                 </li>
-                                <li class="nav-item"><a href="#">Blog</a></li>
-                                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                                <li class="nav-item">
+                                    <a href="#pricing">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#portofolio">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#blog">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contact">Contact</a>
+                                </li>
                             </ul>
                         </div>
                         <!-- navbar collapse -->

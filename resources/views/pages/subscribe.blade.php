@@ -1,5 +1,5 @@
 <!-- Start Newsletter Area -->
-<section class="newsletter-area section">
+<section class="newsletter-area section" id="contact">
     <div class="container">
         <div class="row ">
             <div class="col-lg-8 col-12">

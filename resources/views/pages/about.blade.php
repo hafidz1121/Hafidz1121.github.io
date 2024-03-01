@@ -1,5 +1,5 @@
 <!-- Start About Us Area -->
-<section class="about-us section">
+<section class="about-us section" id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
