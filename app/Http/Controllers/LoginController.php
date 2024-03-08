@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login() {
+    public function index() {
         if(Auth::check()) {
             $user = Auth::user();
 
@@ -35,6 +35,7 @@ class LoginController extends Controller
     
     public function logout() {
         Auth::logout();
+
         return view('auth.login');
     }
 }

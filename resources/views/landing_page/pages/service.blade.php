@@ -13,7 +13,7 @@
         </div>
         <div class="single-head">
             <img class="service-patern wow fadeInLeft" data-wow-delay=".5s"
-                src="assets/images/service/service-patern.png" alt="#">
+                src="{{asset('assets_landing')}}/images/service/service-patern.png" alt="#">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-service wow fadeInUp" data-wow-delay=".2s">

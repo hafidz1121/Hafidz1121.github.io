@@ -16,9 +16,9 @@
                 <!-- Single News -->
                 <div class="single-news wow fadeInUp" data-wow-delay=".2s">
                     <div class="image">
-                        <img class="thumb" src="assets/images/blog/blog-grid1.jpg" alt="#">
+                        <img class="thumb" src="{{asset('assets_landing')}}/images/blog/blog-grid1.jpg" alt="#">
                         <div class="meta-details">
-                            <img src="assets/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
+                            <img src="{{asset('assets_landing')}}/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
                         </div>
                     </div>
                     <div class="content-body">
@@ -34,9 +34,9 @@
                 <!-- Single News -->
                 <div class="single-news wow fadeInUp" data-wow-delay=".4s">
                     <div class="image">
-                        <img class="thumb" src="assets/images/blog/blog-grid2.jpg" alt="#">
+                        <img class="thumb" src="{{asset('assets_landing')}}/images/blog/blog-grid2.jpg" alt="#">
                         <div class="meta-details">
-                            <img src="assets/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
+                            <img src="{{asset('assets_landing')}}/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
                         </div>
                     </div>
                     <div class="content-body">
@@ -52,9 +52,9 @@
                 <!-- Single News -->
                 <div class="single-news wow fadeInUp" data-wow-delay=".6s">
                     <div class="image">
-                        <img class="thumb" src="assets/images/blog/blog-grid3.jpg" alt="#">
+                        <img class="thumb" src="{{asset('assets_landing')}}/images/blog/blog-grid3.jpg" alt="#">
                         <div class="meta-details">
-                            <img src="assets/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
+                            <img src="{{asset('assets_landing')}}/images/blog/author.jpg" alt="#"> <span>BY TIM NORTON</span>
                         </div>
                     </div>
                     <div class="content-body">

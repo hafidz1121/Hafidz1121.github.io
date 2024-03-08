@@ -14,22 +14,22 @@
                 <div class="brand-logo-wrapper wow fadeInRight" data-wow-delay=".4s">
                     <ul class="brand-list liststyle d-flex flex-wrap justify-content-center">
                         <li><a href="#">
-                                <img src="assets/images/clients/client1.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client1.png" alt="Brand Logo Images">
                             </a></li>
                         <li><a href="#">
-                                <img src="assets/images/clients/client2.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client2.png" alt="Brand Logo Images">
                             </a></li>
                         <li><a href="#">
-                                <img src="assets/images/clients/client3.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client3.png" alt="Brand Logo Images">
                             </a></li>
                         <li><a href="#">
-                                <img src="assets/images/clients/client4.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client4.png" alt="Brand Logo Images">
                             </a></li>
                         <li><a href="#">
-                                <img src="assets/images/clients/client5.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client5.png" alt="Brand Logo Images">
                             </a></li>
                         <li><a href="#">
-                                <img src="assets/images/clients/client6.png" alt="Brand Logo Images">
+                                <img src="{{asset('assets_landing')}}/images/clients/client6.png" alt="Brand Logo Images">
                             </a></li>
                     </ul>
                 </div>

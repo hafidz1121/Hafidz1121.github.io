@@ -5,6 +5,7 @@ use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -25,13 +26,15 @@ Route::get('/', function () {
 Route::get('/parsing_data', [ContentController::class, 'index']);
 Route::get('/request_data/{nama}', [ContentController::class, 'requestData']);
 
-Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::get('register', [RegisterController::class, 'index'])->name('register');
+Route::post('register', [RegisterController::class, 'registerProcess'])->name('register.process');
+
+Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'loginProcess'])->name('login.process');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-
 Route::middleware(['auth'])->group(function () {
-    Route::get('home', [LoginController::class, 'login'])->name('home');
+    Route::get('home', [LoginController::class, 'index'])->name('home');
     Route::get('setting', [SettingController::class, 'index'])->name('setting');
     Route::get('overview', [OverviewController::class, 'index'])->name('overview');
 });

@@ -55,7 +55,7 @@ var KTSignupGeneral = function () {
                             }
                         }
                     },
-                    'confirm-password': {
+                    'confirmPassword': {
                         validators: {
                             notEmpty: {
                                 message: 'The password confirmation is required'
@@ -200,7 +200,7 @@ var KTSignupGeneral = function () {
                             }
                         }
                     },
-                    'password_confirmation': {
+                    'confirmPassword': {
                         validators: {
                             notEmpty: {
                                 message: 'The password confirmation is required'
@@ -253,16 +253,39 @@ var KTSignupGeneral = function () {
 
                     // Check axios library docs: https://axios-http.com/docs/intro
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form)).then(function (response) {
-                        if (response) {
+                        if (response.status == 200) {
                             form.reset();
 
+                               // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                            Swal.fire({
+                                text: "You have successfully registered!",
+                                icon: "success",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-primary"
+                                }
+                            });
+                            
                             const redirectUrl = form.getAttribute('data-kt-redirect-url');
 
                             if (redirectUrl) {
                                 location.href = redirectUrl;
                             }
-                        } else {
+                        }
+                    }).catch(function (error) {
+                        if (error.response && error.response.status == 500) {
                             // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                            Swal.fire({
+                                text: "Sorry, looks like email has been registered, please try another email.",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-primary"
+                                }
+                            });
+                        } else {
                             Swal.fire({
                                 text: "Sorry, looks like there are some errors detected, please try again.",
                                 icon: "error",
@@ -273,16 +296,6 @@ var KTSignupGeneral = function () {
                                 }
                             });
                         }
-                    }).catch(function (error) {
-                        Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
-                            icon: "error",
-                            buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn btn-primary"
-                            }
-                        });
                     }).then(() => {
                         // Hide loading indication
                         submitButton.removeAttribute('data-kt-indicator');

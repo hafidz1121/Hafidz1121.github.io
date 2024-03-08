@@ -41,7 +41,7 @@
 								<div class="text-center mb-10">
 									<h1 class="text-dark mb-3">Sign In to Saul</h1>
 									<div class="text-gray-400 fw-semibold fs-4">New Here?
-									<a href="#" class="link-primary fw-bold">Create an Account</a></div>
+									<a href="register" class="link-primary fw-bold">Create an Account</a></div>
 								</div>
 								<div class="fv-row mb-10">
 									<label class="form-label fs-6 fw-bold text-dark">Email</label>
