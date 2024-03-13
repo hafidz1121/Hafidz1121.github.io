@@ -84,10 +84,21 @@ var KTSigninGeneral = function () {
                             }
                         }
                     }).catch(function (error) {
-                        if (error.response && error.response.status == 401) {
+                        if (error.response && error.response.status == 403) {
                             // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                             Swal.fire({
-                                text: "Sorry, the email or password is incorrect, please try again.",
+                                text: "Sorry, your account is inactive, please check verify in your email.",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-primary"
+                                }
+                            });
+                        } else if (error.response && error.response.status == 401) {
+                            // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                            Swal.fire({
+                                text: "Sorry, looks like email or password incorrect, please try again.",
                                 icon: "error",
                                 buttonsStyling: false,
                                 confirmButtonText: "Ok, got it!",

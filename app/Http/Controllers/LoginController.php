@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -24,12 +26,17 @@ class LoginController extends Controller
         $data = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
+            'active' => '1'
         ];
-    
-        if(Auth::attempt($data)) {
-            return response()->view('admin_page.index', [], 200);
+
+        $activeUsersCount = User::where('active', 1)->count();
+
+        if($activeUsersCount == 0) {
+            return response()->view('auth.login', [], Response::HTTP_FORBIDDEN);
+        } else if (Auth::attempt($data)) {
+            return response()->view('admin_page.index', [], Response::HTTP_OK);
         } else {
-            return response()->view('auth.login', [], 401);
+            return response()->view('auth.login', [], Response::HTTP_UNAUTHORIZED);
         }
     }
     

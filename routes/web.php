@@ -28,6 +28,7 @@ Route::get('/request_data/{nama}', [ContentController::class, 'requestData']);
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'registerProcess'])->name('register.process');
+Route::get('register/verify/{verify_key}', [RegisterController::class, 'verify'])->name('verify');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'loginProcess'])->name('login.process');

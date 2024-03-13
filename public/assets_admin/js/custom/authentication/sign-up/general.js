@@ -256,22 +256,23 @@ var KTSignupGeneral = function () {
                         if (response.status == 200) {
                             form.reset();
 
-                               // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                            // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                             Swal.fire({
-                                text: "You have successfully registered!",
+                                text: "You have successfully registered. Please Check Email!",
                                 icon: "success",
                                 buttonsStyling: false,
                                 confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    const redirectUrl = form.getAttribute('data-kt-redirect-url');
+                                    if (redirectUrl) {
+                                        location.href = redirectUrl;
+                                    }
+                                }
                             });
-                            
-                            const redirectUrl = form.getAttribute('data-kt-redirect-url');
-
-                            if (redirectUrl) {
-                                location.href = redirectUrl;
-                            }
                         }
                     }).catch(function (error) {
                         if (error.response && error.response.status == 500) {
