@@ -16,69 +16,48 @@ var KTModalCustomersAdd = function () {
 			form,
 			{
 				fields: {
-                    'name': {
+                    'nama': {
 						validators: {
 							notEmpty: {
-								message: 'Customer name is required'
+								message: 'Nama is required'
 							}
 						}
 					},
-                    'email': {
+                    'nim': {
 						validators: {
 							notEmpty: {
-								message: 'Customer email is required'
+								message: 'NIM is required'
 							}
 						}
 					},
-					'first-name': {
+					'prodi': {
 						validators: {
 							notEmpty: {
-								message: 'First name is required'
+								message: 'Prodi is required'
 							}
 						}
 					},
-					'last-name': {
+					'noTelp': {
 						validators: {
 							notEmpty: {
-								message: 'Last name is required'
+								message: 'No Telepon is required'
 							}
 						}
 					},
-					'country': {
+					'alamat': {
 						validators: {
 							notEmpty: {
-								message: 'Country is required'
+								message: 'Alamat is required'
 							}
 						}
 					},
-					'address1': {
+					'tgl_lahir': {
 						validators: {
 							notEmpty: {
-								message: 'Address 1 is required'
+								message: 'Tanggal Lahir 1 is required'
 							}
 						}
 					},
-					'city': {
-						validators: {
-							notEmpty: {
-								message: 'City is required'
-							}
-						}
-					},
-					'state': {
-						validators: {
-							notEmpty: {
-								message: 'State is required'
-							}
-						}
-					},
-					'postcode': {
-						validators: {
-							notEmpty: {
-								message: 'Postcode is required'
-							}
-						}
-					}
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -91,10 +70,10 @@ var KTModalCustomersAdd = function () {
 			}
 		);
 
-		// Revalidate country field. For more info, plase visit the official plugin site: https://select2.org/
-        $(form.querySelector('[name="country"]')).on('change', function() {
+		// Revalidate alamat field. For more info, plase visit the official plugin site: https://select2.org/
+        $(form.querySelector('[name="alamat"]')).on('change', function() {
             // Revalidate the field when an option is chosen
-            validator.revalidateField('country');
+            validator.revalidateField('alamat');
         });
 
 		// Action buttons
@@ -112,30 +91,75 @@ var KTModalCustomersAdd = function () {
 						// Disable submit button whilst loading
 						submitButton.disabled = true;
 
-						setTimeout(function() {
-							submitButton.removeAttribute('data-kt-indicator');
-							
-							Swal.fire({
-								text: "Form has been successfully submitted!",
-								icon: "success",
-								buttonsStyling: false,
-								confirmButtonText: "Ok, got it!",
-								customClass: {
-									confirmButton: "btn btn-primary"
-								}
-							}).then(function (result) {
-								if (result.isConfirmed) {
-									// Hide modal
-									modal.hide();
+						// Check axios library docs: https://axios-http.com/docs/intro
+						axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form)).then(function (response) {
+							console.log(response.status);
+							if (response.status == 200) { 
+								setTimeout(function() {
+									submitButton.removeAttribute('data-kt-indicator');
+									
+									Swal.fire({
+										text: "Form has been successfully submitted!",
+										icon: "success",
+										buttonsStyling: false,
+										confirmButtonText: "Ok, got it!",
+										customClass: {
+											confirmButton: "btn btn-primary"
+										}
+									}).then(function (result) {
+										if (result.isConfirmed) {
+											// Hide modal
+											modal.hide();
+		
+											// Enable submit button after loading
+											submitButton.disabled = false;
+		
+											// Redirect to customers list page
+											window.location = form.getAttribute("data-kt-redirect");
+										}
+									});							
+								}, 2000);   						
+							}
+						}).catch(function (error) {
+							if (error.response && error.response.status == 422) {
+								// Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+								Swal.fire({
+									text: "Sorry, NIM already exits, please check NIM.",
+									icon: "error",
+									buttonsStyling: false,
+									confirmButtonText: "Ok, got it!",
+									customClass: {
+										confirmButton: "btn btn-primary"
+									}
+								}).then(function (result) {
+									if (result.isConfirmed) {
+										// Hide loading indication
+										submitButton.removeAttribute('data-kt-indicator');
 
-									// Enable submit button after loading
-									submitButton.disabled = false;
-
-									// Redirect to customers list page
-									window.location = form.getAttribute("data-kt-redirect");
-								}
-							});							
-						}, 2000);   						
+										// Enable submit button after loading
+										submitButton.disabled = false;
+									}
+								});
+							} else {
+								Swal.fire({
+									text: "Sorry, looks like there are some errors detected, please try again.",
+									icon: "error",
+									buttonsStyling: false,
+									confirmButtonText: "Ok, got it!",
+									customClass: {
+										confirmButton: "btn btn-primary"
+									}
+								}).then(function (result) {
+									if (result.isConfirmed) {
+										// Hide loading indication
+										submitButton.removeAttribute('data-kt-indicator');
+										
+										// Enable submit button after loading
+										submitButton.disabled = false;
+									}
+								});
+							}
+						});
 					} else {
 						Swal.fire({
 							text: "Sorry, looks like there are some errors detected, please try again.",

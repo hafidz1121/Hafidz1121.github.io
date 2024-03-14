@@ -13,6 +13,9 @@
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
 <script src="{{asset('assets_admin')}}/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="{{asset('assets_admin')}}/js/custom/apps/customers/list/export.js"></script>
+<script src="{{asset('assets_admin')}}/js/custom/apps/customers/list/list.js"></script>
+<script src="{{asset('assets_admin')}}/js/custom/apps/customers/add.js"></script>
 <script src="{{asset('assets_admin')}}/js/widgets.bundle.js"></script>
 <script src="{{asset('assets_admin')}}/js/custom/widgets.js"></script>
 <script src="{{asset('assets_admin')}}/js/custom/apps/chat/chat.js"></script>

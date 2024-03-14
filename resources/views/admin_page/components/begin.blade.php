@@ -2863,7 +2863,7 @@
 														<!--begin:Menu item-->
 														<div class="menu-item">
 															<!--begin:Menu link-->
-															<a class="menu-link" href="{{asset('assets_admin')}}/apps/ecommerce/customers/listing.html">
+															<a class="menu-link" href="customer">
 																<span class="menu-bullet">
 																	<span class="bullet bullet-dot"></span>
 																</span>
@@ -3352,7 +3352,7 @@
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="{{asset('assets_admin')}}/apps/customers/list.html">
+													<a class="menu-link" href="customer">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
@@ -5330,7 +5330,7 @@
 													<!--begin::Links-->
 													<div class="text-center mb-1">
 														<!--begin::Link-->
-														<a class="btn btn-sm btn-primary me-2" href="{{asset('assets_admin')}}/apps/ecommerce/customers/listing.html">Try now</a>
+														<a class="btn btn-sm btn-primary me-2" href="customer">Try now</a>
 														<!--end::Link-->
 														<!--begin::Link-->
 														<a class="btn btn-sm btn-light" href="{{asset('assets_admin')}}/apps/invoices/view/invoice-1.html">Learn more</a>
